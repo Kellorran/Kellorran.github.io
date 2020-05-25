@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Document</title>
+	
+	<!-- Materialize -->
+	<!-- Compiled and minified CSS  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Inicializações -->
+	
+    
+    
+</head>
+<body>
+	<!-- Barra de navegação -->
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo right">Logo</a>
+		</div>
+	</nav>
+	<!-- Corpo da página -->
+	<div class="row">
+		<div class="col s6">
+			<div class="input-field col s12">
+				<textarea class="materialize-textarea" id="sequence-input"></textarea>
+				<label for="sequence-input">Cole aqui a sequência</label>
+			</div>
+			<div class="input-field col s12">
+				<select id="function" class="materialize-select">
+					<option value="mutate">Modificar a sequência</option>
+					<option value="quantities">Analisar quantidades</option>
+				</select>
+			</div>
+
+			<div id="mutate-options">
+				<div class=" input-field col s6">
+					<input name="position" type="number" />
+					<label for="position">Posição da mutação</label>
+				</div>
+				<div class="input-field col s6">
+					<input name="mutation" type="text" />
+					<label for="mutation">Mutação</label>
+				</div>
+			</div>
+			<div id="quantity-options" hidden>
+				<div class="input-field col s12">
+					<select id="quantities-select">
+						<option value="all">Número de monômeros na sequência</option>
+						<option id="quantity-function" value="specific">Quantidade de um monômero específico</option>
+					</select>
+				</div>
+				<div class="input-field col s12">
+					<input type="text" name="letter"/>
+					<label for="letter">Letra</label>
+				</div>
+			</div>
+
+			<div class="col s3">
+				<button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Aplicar
+					<i class="material-icons right">send</i>
+			    </button>
+			</div>
+			
+		</div>
+		<div class="col s6">
+			<textarea id="sequence-output" class="materialize-textarea"readonly></textarea>
+			<label for="sequence-output">A nova sequência ou a quantidade aparecerá aqui</label>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$('select').material_select();
+		});
+	</script>
+	
+</body>
+
+<script src="./script.js"></script>
+
+</html>
